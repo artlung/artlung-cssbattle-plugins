@@ -1,14 +1,16 @@
 function run(code) {
 
-    let replacement_list = {};
+    let replacement_list = {}, i, px, vw, vh, pc, unit, neg_px, neg_unit;
     for (i = 0; i <= 2000; i++) {
         px = i + 'px';
         vw = i / 4 + 'vw';
         vh = i / 3 + 'vh';
+        pc = i / 16 + 'pc';
         unit = i === 0 ? '0' : i + 'px';
         unit = px.length < unit.length ? px : unit;
         unit = vw.length < unit.length ? vw : unit;
         unit = vh.length < unit.length ? vh : unit;
+        unit = pc.length < unit.length ? pc : unit;
         replacement_list[px] = unit;
 
         // negative values
